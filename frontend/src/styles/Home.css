@@ -1,0 +1,77 @@
+/* Container for the hero section */
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  /* Adds a dark overlay so text is readable regardless of the image */
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* The "Welcome" Heading */
+.hero_card {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+/* The Subtitle text */
+.home p:nth-of-type(2) {
+  font-size: 1.2rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Stats line (1000+ Guests...) */
+.home p:last-of-type {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffcc00; /* A gold/accent color for stats */
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Professional Button Link */
+.home a {
+  text-decoration: none;
+  background-color: #ffffff;
+  color: #121212;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.home a:hover {
+  background-color: #ffcc00;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home {
+    padding: 20px;
+  }
+  .hero_card {
+    font-size: 2.5rem;
+  }
+}

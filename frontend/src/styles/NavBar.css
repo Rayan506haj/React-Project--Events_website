@@ -1,0 +1,102 @@
+.navbar {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2); /* Added slight tint for better visibility */
+  backdrop-filter: blur(5px);   /* Blurs the background image slightly behind the nav */
+  position: sticky;              /* Changed to fixed so it stays when you scroll */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 25px;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  position: relative;          /* Necessary for the underline position */
+  transition: all 0.3s ease;   /* Smooth transition for all properties */
+  padding: 5px 0;
+}
+
+/* The "Action" - Hover Effects */
+.navbar a:hover {
+  opacity: 1;
+  color: #c5a059;              /* Changes text to gold */
+  transform: translateY(-2px); /* Moves the text up slightly */
+}
+
+/* Creating the animated underline */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;                     /* Start with no width */
+  height: 2px;
+  bottom: 0;
+  left: 50%;                    /* Start from the center */
+  background-color: #c5a059;    /* Gold line */
+  transition: all 0.3s ease;
+  transform: translateX(-50%);  /* Keeps it centered as it grows */
+}
+
+.navbar a:hover::after {
+  width: 100%;                  /* Grow to full width on hover */
+}
+
+.theme-toggle-nav {
+  background: transparent;
+  border: 1px solid #c5a059;
+  color: #c5a059;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 20px;
+  transition: 0.3s;
+}
+
+.theme-toggle-nav:hover {
+  background: #c5a059;
+  color: #000;
+}
+
+/* --- NAVBAR LIGHT MODE FIX --- */
+
+/* 1. Change the Navbar background to white/light gray */
+.light-mode .navbar {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Change the Nav Links to dark gray so they are visible */
+.light-mode .navbar a {
+  color: #1a1a1a !important;
+}
+
+/* 3. Hover effect for links in light mode */
+.light-mode .navbar a:hover {
+  color: #c5a059 !important; /* Keep the gold for the hover */
+}
+
+/* 4. Style the toggle button inside the navbar for light mode */
+.light-mode .theme-toggle-btn {
+  border-color: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+.light-mode .theme-toggle-btn:hover {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* 5. If you have a Logo text/h1 in the Navbar */
+.light-mode .navbar h1, 
+.light-mode .navbar .logo {
+  color: #c5a059 !important;
+}
