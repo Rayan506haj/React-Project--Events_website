@@ -1,7 +1,7 @@
-import React ,{useState} from "react";
+import React from "react";
 import img from '../assets/img.jpg';
 import '../styles/Contact.css';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Contact() {

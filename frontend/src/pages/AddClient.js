@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import img from '../assets/img.jpg';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddClient = () => {
 
@@ -11,7 +11,7 @@ const AddClient = () => {
             phone:"",
             
     });
-    const [error, setError] = useState(false);
+    const [, setError] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
 

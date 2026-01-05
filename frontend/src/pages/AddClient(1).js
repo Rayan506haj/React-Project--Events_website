@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import img from '../assets/img.jpg';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const AddClient = () => {
 
@@ -11,34 +11,45 @@ const AddClient = () => {
             phone:"",
             
     });
+    const [ , setError] = useState(false);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const [error, setError] = useState(false);
+
 
     const navigate = useNavigate();
     
     const handleChange = (e) => {
-        setClient((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
+      setClient((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-        await axios.post("http://localhost:5000/client", {
-          name: client.name,
-          email: client.email,
-          phone: client.phone,
-        });
-        navigate("/contact");
-              } catch (err) {
-                console.log(err);
-                setError(true);
-              }
-    };
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          
+          await axios.post("http://localhost:5000/client", client);
+          setIsSubmitted(true);
+          setTimeout(() => {
+              navigate("/contact");
+          }, 2500);
+      } catch (err) {
+          console.log(err);
+          setError(true);
+      }
+  };
 
 
     return (
 
-        <div className="contact">
+
+      <div className="contact">
+                {isSubmitted ? (
+                <div className="success-message">
+                    <h2>Thank you for sharing your information!</h2>
+                    <p>Your will receive our new events by SMS.</p>
+                    <p>Redirecting you to contact...</p>
+                </div>
+            ) : (
+             <>          
             <div className="leftSide" style={{ backgroundImage: `url(${img})` }} ></div>
             <div className="rightSide">
                 <p> Please fill this form to recieve new events via email and SMS message</p>  
@@ -55,7 +66,10 @@ const AddClient = () => {
                     <button type="submit" onClick = {handleSubmit}> Confirm</button>
                 </form>
             </div>
+            </>
+            )}
         </div>
+            
 
     );
 }
