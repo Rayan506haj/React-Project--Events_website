@@ -22,7 +22,7 @@ const Branches = () => {
     const handleDelete = async (Bid) => {
       try {
         await axios.delete(`http://localhost:5000/branches/${Bid}`);
-        setEvents(branches.filter((p) => p.Bid !== Bid));
+        setBranches(branches.filter((p) => p.Bid !== Bid));
       } catch (err) {
         console.log(err);
       }

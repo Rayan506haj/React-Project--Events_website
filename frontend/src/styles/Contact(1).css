@@ -1,0 +1,116 @@
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 5% 50px; 
+  min-height: 100vh;
+  gap: 3rem;
+  background-color: #121212; 
+  box-sizing: border-box;
+  color: #c5a059;
+}
+
+.leftSide {
+  flex: 1;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.rightSide h1 {
+  color: #c5a059;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  color: #c5a059;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input, textarea {
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #121212;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #c5a059; /* Gold focus ring */
+}
+
+input::placeholder {
+  color: #555;
+}
+
+/* Submit Button Style */
+form button {
+  background: #c5a059;
+  color: #000;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+
+form button:hover {
+  background: #fff;
+  transform: translateY(-3px);
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .contact {
+    flex-direction: column;
+    padding-top: 120px;
+  }
+  
+  .leftSide {
+    min-height: 250px;
+  }
+}
+
+.b{
+  background: #c5a059;
+  color: #000;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-self: center; 
+  height: auto;      
+  padding: 12px 24px;
+  font-size: smaller;
+}
+
+.rightSide{
+  flex-direction: column;
+}
+

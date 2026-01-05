@@ -1,0 +1,61 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Important: tells the body it can be 100% tall */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Minimum height of the browser window */
+  background-color: #121212;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.main-content {
+  flex: 1; /* This is the 'spring' that pushes the footer to the bottom */
+  width: 100%;
+  padding-top: 100px; /* Adjust this so content doesn't hide under Navbar */
+  padding-bottom: 60px; /* Space before the footer starts */
+  
+  /* Centering logic */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  margin-top: auto; /* Extra safety to keep it down */
+  width: 100%;
+  background-color: #121212;
+}
+
+
+
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: #c5a059;
+}
+
+
+
+
+
+
+/* Navigation & Footer (Basic setup to ensure they don't break width) */
+nav, footer {
+    width: 100%;
+}
+
+Link{
+  color: white;
+}
+
+
+
+
