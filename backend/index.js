@@ -4,7 +4,7 @@ import cors from "cors";
 
 const app = express();
 app.use(cors({
-  origin: ["http://localhost:3000", "https://http://rayaneventswebsite.netlify.app"] 
+  origin: ["https://http://rayaneventswebsite.netlify.app"] 
 }));
 
 app.use(express.json());
