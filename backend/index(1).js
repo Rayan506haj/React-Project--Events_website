@@ -3,8 +3,12 @@ import mysql from "mysql2";
 import cors from "cors";
 
 const app = express();
+const cors = require('cors');
+
 app.use(cors({
-  origin: ["http://localhost:3000", "https://http://rayaneventswebsite.netlify.app"] 
+  origin: ["https://rayaneventswebsite.netlify.app", "http://localhost:3000"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
 app.use(express.json());
