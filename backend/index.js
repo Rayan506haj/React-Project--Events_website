@@ -5,11 +5,14 @@ import cors from "cors";
 const app = express();
 const cors = require('cors');
 
-app.use(cors({
-  origin: ["https://rayaneventswebsite.netlify.app", "http://localhost:3000"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+const corsOptions = {
+  origin: 'https://rayaneventswebsite.netlify.app', // Your Netlify URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
