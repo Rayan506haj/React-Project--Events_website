@@ -3,7 +3,6 @@ import mysql from "mysql2";
 import cors from "cors";
 
 const app = express();
-const cors = require('cors');
 
 app.use(cors({
   origin: 'https://rayaneventswebsite.netlify.app', 
@@ -11,14 +10,13 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(cors(corsOptions));
-
 app.use(express.json());
 
+// DATABASE CONNECTION
 const db = mysql.createPool({
-  uri: process.env.DATABASE_URL, // This is the Service URI from Aiven
+  uri: process.env.DATABASE_URL, 
   ssl: {
-    rejectUnauthorized: false // Required for Aiven's secure connection
+    rejectUnauthorized: false 
   },
   waitForConnections: true,
   connectionLimit: 10,
