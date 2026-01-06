@@ -5,7 +5,7 @@ function ComboBox({ value, onSelectChange }) {
   const [branches, setBranches] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/branches")
+    fetch("https://react-project-events-website.onrender.com/branches")
       .then((response) => response.json())
       .then((data) => setBranches(data))
       .catch((error) => console.error("Error fetching branches:", error));
