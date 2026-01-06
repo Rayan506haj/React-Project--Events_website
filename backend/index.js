@@ -3,20 +3,28 @@ import mysql from "mysql2";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://your-site-name.netlify.app"] 
+}));
+
 app.use(express.json());
 
-// MYSQL connection 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "webprojectdb",
+const db = mysql.createPool({
+  uri: process.env.DATABASE_URL, // This is the Service URI from Aiven
+  ssl: {
+    rejectUnauthorized: false // Required for Aiven's secure connection
+  },
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 }).promise();
 
-app.listen(5000, () => {
-  console.log("Connected to backend.");
-});
+
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () =>
+  console.log("Connected to backend."));
+
 
 
 
