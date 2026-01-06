@@ -31,7 +31,7 @@ const AddEvent = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        await axios.post("http://localhost:5000/events", {
+        await axios.post("https://react-project-events-website.onrender.com/events", {
           name: event.name,
           description: event.description,
           date: event.date,

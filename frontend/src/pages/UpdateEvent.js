@@ -19,7 +19,7 @@ const UpdateEvent = () => {
     // Fetch one event
     useEffect(() => {
         axios
-      .get(`http://localhost:5000/events/onerecord/${id}`)
+      .get(`https://react-project-events-website.onrender.com/events/onerecord/${id}`)
       .then((res) => {
         setEvent({
           name: res.data.name,
@@ -45,7 +45,7 @@ const UpdateEvent = () => {
         e.preventDefault();
     
         try {
-          await axios.put(`http://localhost:5000/events/${id}`, {
+          await axios.put(`https://react-project-events-website.onrender.com/events/${id}`, {
                 name: event.name,
                 description: event.description,
                 date: event.date,

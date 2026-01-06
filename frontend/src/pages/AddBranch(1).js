@@ -22,7 +22,7 @@ const AddBranch = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        await axios.post("http://localhost:5000/branches", {
+        await axios.post("https://react-project-events-website.onrender.com/branches", {
           name: branch.name,
           imageURL: branch.imageURL,
         });

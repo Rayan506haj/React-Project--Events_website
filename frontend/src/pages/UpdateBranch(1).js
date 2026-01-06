@@ -17,7 +17,7 @@ const UpdateBranch = () => {
     // Fetch one branch
     useEffect(() => {
         axios
-      .get(`http://localhost:5000/branches/onerecord/${id}`)
+      .get(`https://react-project-events-website.onrender.com/branches/onerecord/${id}`)
       .then((res) => {
         setBranch({
           name: res.data.name,
@@ -40,7 +40,7 @@ const UpdateBranch = () => {
         e.preventDefault();
     
         try {
-          await axios.put(`http://localhost:5000/branches/${id}`, {
+          await axios.put(`https://react-project-events-website.onrender.com/branches/${id}`, {
                 name: branch.name,
                 imageURL: branch.imageURL,
           });

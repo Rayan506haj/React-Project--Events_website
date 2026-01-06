@@ -10,7 +10,7 @@ const Branches = () => {
     useEffect(() => {
       const fetchAllBranches=async()=>{
         try{
-          const res = await axios.get ("http://localhost:5000/branches");
+          const res = await axios.get ("https://react-project-events-website.onrender.com/branches");
           setBranches(res.data);
         }catch(err){
           console.log(err);
@@ -21,7 +21,7 @@ const Branches = () => {
 
     const handleDelete = async (Bid) => {
       try {
-        await axios.delete(`http://localhost:5000/branches/${Bid}`);
+        await axios.delete(`https://react-project-events-website.onrender.com/branches/${Bid}`);
         setBranches(branches.filter((p) => p.Bid !== Bid));
       } catch (err) {
         console.log(err);
@@ -31,7 +31,7 @@ const Branches = () => {
     const handleClear = async () => {
       if (window.confirm("Are you sure you want to delete ALL branches?")) {
         try {
-          await axios.delete(`http://localhost:5000/branches`);
+          await axios.delete(`https://react-project-events-website.onrender.com/branches`);
           
           
           setBranches([]); 

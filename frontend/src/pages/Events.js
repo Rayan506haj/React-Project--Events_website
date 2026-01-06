@@ -14,7 +14,7 @@ const Events = () => {
 
   useEffect(() => {
     if (branchId) {
-      axios.get(`http://localhost:5000/events/branch/${branchId}`)
+      axios.get(`https://react-project-events-website.onrender.com/events/branch/${branchId}`)
         .then(res => {
           console.log("Database Data:", res.data); 
           setEvents(res.data);
@@ -27,7 +27,7 @@ const Events = () => {
 
   const handleDelete = async (Eid) => {
     try {
-      await axios.delete(`http://localhost:5000/events/${Eid}`);
+      await axios.delete(`https://react-project-events-website.onrender.com/events/${Eid}`);
       setEvents(events.filter((p) => p.Eid !== Eid));
     } catch (err) {
       console.log(err);
@@ -43,7 +43,7 @@ const Events = () => {
   const handleClear = async () => {
     if (window.confirm("Are you sure you want to delete ALL events?")) {
       try {
-        await axios.delete(`http://localhost:5000/events`);
+        await axios.delete(`https://react-project-events-website.onrender.com/events`);
         
         
         setEvents([]); 

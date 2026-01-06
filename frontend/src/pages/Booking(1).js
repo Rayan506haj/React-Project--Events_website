@@ -26,7 +26,7 @@ const Booking = () => {
         e.preventDefault();
         try {
             
-            await axios.post("http://localhost:5000/booking", book);
+            await axios.post("https://react-project-events-website.onrender.com/booking", book);
             setIsSubmitted(true);
             setTimeout(() => {
                 navigate("/Events");

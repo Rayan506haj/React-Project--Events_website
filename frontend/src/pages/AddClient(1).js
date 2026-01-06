@@ -26,7 +26,7 @@ const AddClient = () => {
       e.preventDefault();
       try {
           
-          await axios.post("http://localhost:5000/client", client);
+          await axios.post("https://react-project-events-website.onrender.com/client", client);
           setIsSubmitted(true);
           setTimeout(() => {
               navigate("/contact");
